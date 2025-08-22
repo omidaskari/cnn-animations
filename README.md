@@ -1,31 +1,53 @@
-# 🧠 CNN Animations
+🧠 CNN Animations
 
-Short, focused animations that explain core **Convolutional Neural Network** ops.
+Animations that explain the building blocks of Convolutional Neural Networks (CNNs), step by step.
 
-<p align="center">
-  <img src="exports/gif/conv2d_valid.gif" width="520" alt="Convolution animation preview"/>
-</p>
+📌 Why CNNs?
 
-## What is a CNN?
+A Convolutional Neural Network (CNN) is a special kind of deep learning model designed to work with grid-like data such as images or audio spectrograms.
 
-A **CNN** processes grid-like data (e.g., images) using small sliding filters (kernels) with **shared weights** to detect local patterns.
+CNNs use three key ideas:
 
-## What is a Feature Map?
+🔎 Local receptive fields – small filters (kernels) look at small neighborhoods in the data
 
-A **feature map** is the 2-D array after a convolution (and usually an activation). Large values indicate the filter’s pattern is present.
+♻️ Weight sharing – the same kernel slides everywhere, reducing parameters
 
-## 🎬 Episode 1 — Convolution
+🏗 Hierarchy of features – shallow layers learn edges/textures, deeper layers learn shapes/objects
 
-We slide a **3×3 kernel** over a **5×5 input** (valid padding, stride 1).  
-At each position we **multiply & sum** the window × kernel and write the result to the output cell.
+🌊 What is a Feature Map?
 
-## 🗂 Layout
-cnn-animations/
-README.md
-docs/intro.md
-manim_scenes/
-exports/gif/
-exports/mp4/
-scripts/
-requirements.txt
-.gitignore
+When you apply a kernel to an input and then pass the result through a nonlinearity (like ReLU), you get a feature map:
+
+It highlights where the filter’s pattern (e.g., vertical edge) appears in the input
+
+Different kernels produce different feature maps (edges, corners, blobs)
+
+Stacking many maps across channels builds a rich representation of the input
+
+Think of feature maps as the “eyes” of the CNN—each filter looking for its own pattern.
+
+🎬 Episode 1 — Convolution
+
+In this repo, we start with the most fundamental operation: 2D Convolution.
+
+Input: 5×5 grid
+
+Kernel: 3×3 filter
+
+Padding: valid (no padding)
+
+Stride: 1
+
+At each position, the kernel slides across the input:
+
+Multiply each overlapping pair (input × kernel)
+
+Sum them all → one number
+
+Place that number in the output grid
+
+This produces a 3×3 feature map, which encodes how strongly the kernel’s pattern appears at each location.
+
+📜 License
+
+MIT — free to use and share
