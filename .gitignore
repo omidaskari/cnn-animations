@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+**/media/
+**/partial_movie_files/
+**/Tex/
+**/temp/
+**/images/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
